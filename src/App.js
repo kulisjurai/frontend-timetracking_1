@@ -6,22 +6,25 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Team from "./Pages/Team/Team";
 import Support from "./Pages/Support/Support";
+import GeneralContextProvider from "./contexts/GeneralContext";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
+      <GeneralContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </GeneralContextProvider>
     </div>
   );
 }
