@@ -42,3 +42,6 @@
 .login-btn:hover {
   opacity: 0.7;
 }
+.sign-in:hover {
+  cursor: pointer;
+}

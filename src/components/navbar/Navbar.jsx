@@ -6,11 +6,19 @@ import { SidebarData } from "./SidebarData";
 import { TopbarData } from "./TopbarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
+import { GeneralContext } from "../../contexts/GeneralContext";
+import LogoIcon from "../../assets/icons/LogoIcon";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const { user, setUser } = useContext(GeneralContext);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  const logoutUser = () => {
+    setUser("");
+    window.location.replace("/login");
+  };
 
   return (
     <>
@@ -19,18 +27,21 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <ul className="nav-menu-items1">
-            {TopbarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <h2 className="logo">hoursON</h2>
+          {user && (
+            <ul className="nav-menu-items1">
+              {TopbarData.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName} onClick={logoutUser}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">

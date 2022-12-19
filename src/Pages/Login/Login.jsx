@@ -3,33 +3,34 @@ import { GeneralContext } from "../../contexts/GeneralContext";
 import "./Login.css";
 
 function Login() {
-  const { setState } = useContext(GeneralContext);
-  const [url, setUrl] = useState("https://jsonplaceholder.typicode.com/todos");
+  const { setUser } = useContext(GeneralContext);
 
   useEffect(() => {
     console.log("computed once");
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setState(data));
-  }, [url]);
+  }, []);
+
+  const switchToSignInForm = () => {
+    window.location.replace("/register");
+  };
+
+  const saveUser = () => {
+    setUser("Stanko");
+  };
 
   return (
     <div className="login-form">
       <h1>Login</h1>
       <input type="email" placeholder="Email" />
       <input type="text" placeholder="Passsword" />
-      <button
-        onClick={() => {
-          console.log(url);
-          setUrl("https://jsonplaceholder.typicode.com/todos/1");
-          return url;
-          console.log(url);
-        }}
-        className="login-btn"
-      >
+      <button className="login-btn" onClick={saveUser}>
         Login
       </button>
-      <p>Don't Have an Account! Sign in</p>
+      <p>
+        Don't Have an Account!
+        <span className="sign-in" onClick={switchToSignInForm}>
+          Sign in
+        </span>
+      </p>
     </div>
   );
 }
