@@ -24,7 +24,7 @@
   font-size: 35px;
 }
 
-.register-form button {
+.register-form .btn {
   width: 50%;
   padding: 12px;
   margin-top: 20px;
@@ -41,4 +41,14 @@
 
 .register-btn:hover {
   opacity: 0.7;
+  cursor: pointer;
+}
+
+.body-register {
+  background-image: url("../../assets/icons/background.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }

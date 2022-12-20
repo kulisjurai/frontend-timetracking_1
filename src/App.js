@@ -9,12 +9,15 @@ import Team from "./Pages/Team/Team";
 import Support from "./Pages/Support/Support";
 import { GeneralContext } from "./contexts/GeneralContext";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { user } = useContext(GeneralContext);
 
   return (
     <div className="App">
+      <ToastContainer />
       <BrowserRouter>
         {user && <NavBar />}
         <Routes>

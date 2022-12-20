@@ -7,7 +7,7 @@ import { TopbarData } from "./TopbarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import { GeneralContext } from "../../contexts/GeneralContext";
-import LogoIcon from "../../assets/icons/LogoIcon";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -17,7 +17,12 @@ function Navbar() {
 
   const logoutUser = () => {
     setUser("");
+    notify();
     window.location.replace("/login");
+  };
+
+  const notify = () => {
+    toast.info("You are logeed out", { position: toast.POSITION.TOP_RIGHT });
   };
 
   return (

@@ -1,10 +1,12 @@
 .login-form {
+  margin-top: 120px;
   width: 350px;
   border-radius: 7px;
   padding: 20px;
   margin: 2% auto;
   border: 1px solid #2c3775;
   background-color: #f0f1f9;
+  height: fit-content;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form input {
@@ -41,7 +43,22 @@
 
 .login-btn:hover {
   opacity: 0.7;
+  cursor: pointer;
 }
 .sign-in:hover {
   cursor: pointer;
+  color: rgb(108, 108, 167);
+}
+.sign-in {
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.body-login {
+  background-image: url("../../assets/icons/background.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }

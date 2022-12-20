@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { GeneralContext } from "../../contexts/GeneralContext";
-import Modal from "../../components/modal/Modal";
 
 function Support() {
   const { state } = useContext(GeneralContext);
@@ -25,7 +24,6 @@ function Support() {
       )}
 
       <h1>this is support</h1>
-      <Modal name={{ state }}></Modal>
     </div>
   );
 }
