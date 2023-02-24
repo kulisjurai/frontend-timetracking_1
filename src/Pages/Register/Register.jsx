@@ -1,19 +1,54 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "./Register.css";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Register() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [fisrtName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+
   useEffect(() => {}, []);
 
-  const notify = () => {
-    toast.success("Wow its so easy", { position: toast.POSITION.TOP_RIGHT });
+  const notify = (toastType, message) => {
+    toast[toastType](message, { position: toast.POSITION.TOP_RIGHT });
   };
 
   const switchToLoginInForm = () => {
-    console.log("Geeeeeee");
-    notify();
     window.location.replace("/login");
+  };
+
+  const registerUser = () => {
+    fetch("http://localhost:8081/user/register", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        fisrtName,
+        lastName,
+        email,
+      }),
+    })
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        window.location.replace("/login");
+      })
+      .catch((err) => {
+        notify(
+          "warning",
+          "Username or email already exist, please try with another one"
+        );
+        return;
+      });
   };
 
   return (
@@ -21,14 +56,40 @@ function Register() {
       {" "}
       <div className="register-form">
         <h1>Register</h1>
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
-        <input type="text" placeholder="Address" />
-        <input type="email" placeholder="Email" />
-        <input type="text" placeholder="Password" />
-        <button onClick={switchToLoginInForm} className="register-btn btn">
+        <input
+          onChange={(e) => setUsername(e.target.value)}
+          type="text"
+          placeholder="Username"
+        />
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          onChange={(e) => setFirstName(e.target.value)}
+          type="text"
+          placeholder="First Name"
+        />
+        <input
+          onChange={(e) => setLastName(e.target.value)}
+          type="text"
+          placeholder="Last Name"
+        />
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email"
+        />
+        <button onClick={registerUser} className="register-btn btn">
           Sign Up
         </button>
+        <p>
+          Already have an Account!
+          <span className="sign-in" onClick={switchToLoginInForm}>
+            Login
+          </span>
+        </p>
       </div>
     </div>
   );

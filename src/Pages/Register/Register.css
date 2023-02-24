@@ -3,9 +3,9 @@
   border-radius: 7px;
   padding: 20px;
   margin: 2% auto;
-  border: 1px solid #2c3775;
   background-color: #f0f1f9;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  color: #2c3775;
 }
 .register-form input {
   box-sizing: border-box;
@@ -14,10 +14,11 @@
   padding: 12px;
   margin-bottom: 20px;
   border: none;
-  border-bottom: 2px solid #5d5e5e;
+  border-bottom: 2px solid #2c3775;
   font-size: 15px;
   outline: none;
   background-color: #f0f1f9;
+  color: #2c3775;
 }
 .register-form h1 {
   margin: 40px 0;
@@ -51,4 +52,9 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+}
+
+.buttons-generate {
+  display: flex;
+  height: 40px;
 }

@@ -13,7 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const { user } = useContext(GeneralContext);
+  const { user, role } = useContext(GeneralContext);
 
   return (
     <div className="App">
@@ -23,7 +23,10 @@ function App() {
         <Routes>
           <Route path="/" element={user ? <Home /> : <Login />} />
           <Route path="/reports" element={user ? <Reports /> : <Login />} />
-          <Route path="/team" element={user ? <Team /> : <Login />} />
+          <Route
+            path="/team"
+            element={user && role === "admin" ? <Team /> : <Login />}
+          />
           <Route path="/support" element={user ? <Support /> : <Login />} />
           <Route path="/login" element={!user ? <Login /> : <Home />} />
           <Route path="/register" element={<Register />} />

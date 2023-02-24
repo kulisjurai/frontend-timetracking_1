@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+.wrapper-div {
+  height: 65vh;
+  margin: 15px;
+  background-color: rgb(212, 209, 209);
+  margin-left: 267px;
+  margin-right: 17px;
+  box-shadow: -3px 5px 22px 0px rgba(61, 46, 46, 0.43);
+  -webkit-box-shadow: -3px 5px 22px 0px rgba(61, 46, 46, 0.43);
+  -moz-box-shadow: -3px 5px 22px 0px rgba(61, 46, 46, 0.43);
+  border-radius: 10px;
+}
+
+.upper-div {
+  height: 40%;
+  background-color: #f5f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  color: rgb(16, 62, 122);
+}
+
+.lower-div {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.inner {
+  height: 100%;
+  width: 95%;
+  margin: 15px;
+  border: 1px rgb(212, 206, 206) solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.img-check {
+  height: 100px;
+  align-self: center;
+}
+
+.time-checking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(215, 228, 228);
+}
+
+.time-checking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar {
+  width: 50% !important;
+  height: 90% !important;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  color: rgb(3, 32, 87);
+  border-radius: 14px;
+  background: #f5f0f0;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #e7e7e7;
+  padding: 15px;
+}
+.analog-clock {
+  height: 50px;
+}
+
+.analog-wrapper {
+  display: flex;
+  align-items: center;
+  height: 82% !important;
+  background: #f5f0f0;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #e7e7e7;
+  padding: 15px;
+}
+.check-out-image {
+  height: 100px;
+}
+
+.green {
+  padding: 1px 32px;
+  border-radius: 7px;
+  background-color: #53c29d;
+  color: #ffffff;
+}
+
+.red {
+  padding: 1px 32px;
+  border-radius: 7px;
+  background-color: rgb(233, 141, 141);
+  color: #ffffff;
+}
+
+.red:hover {
+  cursor: pointer;
+  background-color: rgb(231, 105, 105);
+}
+
+.green:hover {
+  cursor: pointer;
+  background-color: #30ca97;
+}

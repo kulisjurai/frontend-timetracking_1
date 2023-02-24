@@ -1,5 +1,4 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 
@@ -9,12 +8,14 @@ export const SidebarData = [
     path: "/",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
+    protected: false,
   },
   {
     title: "Reports",
     path: "/reports",
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
+    protected: false,
   },
 
   {
@@ -22,11 +23,13 @@ export const SidebarData = [
     path: "/team",
     icon: <IoIcons.IoMdPeople />,
     cName: "nav-text",
+    protected: true,
   },
   {
     title: "Support",
     path: "/support",
     icon: <IoIcons.IoMdHelpCircle />,
     cName: "nav-text",
+    protected: false,
   },
 ];
